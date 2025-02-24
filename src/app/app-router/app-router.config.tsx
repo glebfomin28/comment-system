@@ -1,11 +1,12 @@
 import { routes } from '@/shared/services/routes.services';
 import { ERoutes, TAppRouteProps } from './app-router.types';
 import { UserSelect } from '@/features/user-select';
+import { CommentsPanel } from '@/features/comments';
 
 export const appRouterConfig: Record<ERoutes, TAppRouteProps> = {
     [ERoutes.MAIN]: {
         path: routes.main(),
-        element: <div>MAIN</div>,
+        element: <CommentsPanel />,
         private: true
     },
     [ERoutes.AUTH]: {

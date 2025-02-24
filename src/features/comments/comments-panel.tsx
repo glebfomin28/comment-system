@@ -1,19 +1,33 @@
-import { Container } from '@chakra-ui/react';
-import { Text } from '@chakra-ui/react';
+import { UserHeader } from '@/features/user-header';
+import { CommentsList } from '@/features/comments/partials/comments-list';
+import { CommentsPanelLayout, CommentsForm } from './partials';
+import { useComments } from '@/features/comments/hooks/use-comments';
 
 export const CommentsPanel = () => {
+    const {
+        comments,
+        currentUserId,
+        createNewComment,
+        collapsedComment,
+        removeComment,
+        incrementRating,
+        decrementRating
+    } = useComments();
+
+    if (!currentUserId) return null;
+
     return (
-        <Container maxW="container.xl">
-            <Text fontSize="6xl">(6xl) In love with React & Next</Text>
-            <Text fontSize="5xl">(5xl) In love with React & Next</Text>
-            <Text fontSize="4xl">(4xl) In love with React & Next</Text>
-            <Text fontSize="3xl">(3xl) In love with React & Next</Text>
-            <Text fontSize="2xl">(2xl) In love with React & Next</Text>
-            <Text fontSize="xl">(xl) In love with React & Next</Text>
-            <Text fontSize="lg">(lg) In love with React & Next</Text>
-            <Text fontSize="md">(md) In love with React & Next</Text>
-            <Text fontSize="sm">(sm) In love with React & Next</Text>
-            <Text fontSize="xs">(xs) In love with React & Next</Text>
-        </Container>
+        <CommentsPanelLayout header={<UserHeader />}>
+            <CommentsForm createNewComment={createNewComment} />
+            <hr />
+            <CommentsList
+                comments={comments}
+                currentUserId={currentUserId}
+                removeComment={removeComment}
+                collapsedComment={collapsedComment}
+                incrementRating={incrementRating}
+                decrementRating={decrementRating}
+            />
+        </CommentsPanelLayout>
     );
 };

@@ -9,7 +9,15 @@ interface IUserSelectItemProps {
 export const UserSelectItem = ({ item, onSelect }: IUserSelectItemProps) => {
     return (
         <div onClick={() => onSelect(item)}>
-            <Box maxW="sm" borderWidth="1px" borderRadius="2xl" overflow="hidden" padding="2" cursor="pointer">
+            <Box
+                minW="sm"
+                maxW="2xl"
+                borderWidth="1px"
+                borderRadius="2xl"
+                overflow="hidden"
+                padding="2"
+                cursor="pointer"
+            >
                 <Flex gap="4">
                     <Avatar size="xl" name={item.name} src={item.avatarSrc} />
                     <Flex direction="column">
