@@ -1,6 +1,6 @@
 import { IUser } from '@/features/user/user.domain';
 
-const getAvatarSrc = (n: number, format: string) => `${window.location.origin}/public/user-avatar/${n}.${format}`;
+const getAvatarSrc = (n: number, format: string) => `${window.location.origin}/user-avatar/${n}.${format}`;
 
 export const userConfig: IUser[] = [
     { id: '1', name: 'Кот', avatarSrc: getAvatarSrc(1, 'jpg') },

@@ -1,7 +1,6 @@
 import { UserHeader } from '@/features/user-header';
-import { CommentsList } from '@/features/comments/partials/comments-list';
-import { CommentsPanelLayout, CommentsForm } from './partials';
-import { useComments } from '@/features/comments/hooks/use-comments';
+import { useComments } from './hooks/use-comments';
+import { CommentsPanelLayout, CommentsForm, CommentsList } from './partials';
 
 export const CommentsPanel = () => {
     const {

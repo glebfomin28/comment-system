@@ -6,17 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:analyze": "ANALYZE=true --config vite.config.ts tsc && vite build",
+    "preview": "vite preview",
+    "start": "vite preview --host",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
     "eslint:check": "eslint ./src --ext ts,tsx",
     "eslint:fix": "eslint ./src --ext ts,tsx --fix",
-    "stylelint:check": "stylelint src/**/*.{scss,css}",
-    "stylelint:fix": "stylelint src/**/*.{scss,css} --fix",
     "prettier:check": "prettier --check \"**/**\"",
     "prettier:fix": "prettier --check \"**/**\" --write",
     "prepare": "husky"
@@ -50,7 +44,6 @@
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",
     "vite": "^5.4.14",
-    "vite-bundle-analyzer": "^0.16.0",
     "vite-plugin-svgr": "^4.2.0",
     "vitest": "^3.0.6"
   }
