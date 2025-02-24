@@ -1,7 +1,8 @@
 import { routes } from '@/shared/services/routes.services';
-import { ERoutes, TAppRouteProps } from './app-router.types';
 import { UserSelect } from '@/features/user-select';
 import { CommentsPanel } from '@/features/comments';
+import { NotFoundPage } from '@/pages/not-found-page';
+import { ERoutes, TAppRouteProps } from './app-router.types';
 
 export const appRouterConfig: Record<ERoutes, TAppRouteProps> = {
     [ERoutes.MAIN]: {
@@ -13,12 +14,8 @@ export const appRouterConfig: Record<ERoutes, TAppRouteProps> = {
         path: routes.auth(),
         element: <UserSelect />
     },
-    [ERoutes.FORBIDDEN]: {
-        path: routes.forbidden(),
-        element: <div>FORBIDDEN</div>
-    },
     [ERoutes.NOT_FOUND]: {
         path: '*',
-        element: <div>NOT_FOUND</div>
+        element: <NotFoundPage />
     }
 };
