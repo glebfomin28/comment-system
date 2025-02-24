@@ -3,4 +3,4 @@
 1. ```npm install``` - установка зависимостей
 2. ```npm run dev``` - запуск в dev режиме
 
-Демо: 
+Демо: https://animals-commentary-system.netlify.app
